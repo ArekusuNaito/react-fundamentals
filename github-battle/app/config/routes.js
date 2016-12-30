@@ -9,6 +9,7 @@ var Home = require("../components/Home");
 
 // Maps URL to ceirtain components
 
+var PromptContainer = require('../containers/PromptContainer')
 
 //Inside routes there's  JSX
 //No matter what path someone goes to, make sure Main is active
@@ -18,6 +19,8 @@ var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Home} />
+      <Route path='playerOne' header="Player One" component={PromptContainer}/>
+      <Route path='playerTwo/:playerOne' header="Player Two" component={PromptContainer}/>
     </Route>
   </Router>
 );
