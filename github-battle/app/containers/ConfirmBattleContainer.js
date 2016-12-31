@@ -42,12 +42,27 @@ var ConfirmBattleContainer = React.createClass(
     {
       console.log("Confirm Battle Container: componentWillUnmount()");
     },
+    handleInitiateBattle: function()
+    {
+      //We still haven't added the /results route on routes.js
+      //So for this commit it's not going to work
+      this.context.router.push(
+        {
+          pathname: '/results',
+          state: //We will pass the playersInfo to the next route
+          {
+            playersInfo: this.state.playersInfo
+          }
+        }
+      )
+    },
     render: function()
     {
       return(
         <ConfirmBattle
           isLoading={this.state.isLoading}
           playersInfo={this.state.playersInfo}
+          onInitiateBattle={this.handleInitiateBattle}
         />
       )
     }
