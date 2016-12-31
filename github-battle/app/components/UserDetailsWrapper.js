@@ -5,7 +5,7 @@ function UserDetailsWrapper (props)
 {
   //Notice that we use a header, you know to render a custom header
   //Also it's super important to notice the {props.children}
-  //{props.children} allows us to render our <UserDetails /> component
+  //{props.children} allows us to render our <UserDetails /> component. Check this on ConfirmBattle.js
   return (
     <div className='col-sm-6'>
       <p className='lead'>{props.header}</p>
