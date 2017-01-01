@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes
 var styles = require('../styles') //writing like this will automatically detect 'index.js'
 var Link = require('react-router').Link
+var MainContainer = require('./MainContainer')
 var UserDetails = require('./UserDetails')
 var UserDetailsWrapper = require('./UserDetailsWrapper')
 
@@ -9,7 +10,7 @@ var UserDetailsWrapper = require('./UserDetailsWrapper')
 function ConfirmBattle (props) {
   return props.isLoading === true
     ? <p>LOADING</p>
-    : <div className="jumbotron col-sm-12 text-center" style={styles.transparentBg}>
+    : <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
           <UserDetailsWrapper header='Player 1'>
@@ -29,7 +30,7 @@ function ConfirmBattle (props) {
             </Link>
           </div>
         </div>
-      </div>
+      </MainContainer>
 }
 
 ConfirmBattle.propTypes =
